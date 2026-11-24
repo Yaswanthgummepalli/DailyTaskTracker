@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Task Tracker - V5</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">✓</div>
+        <div>
+          <h1>Daily Tracker</h1>
+          <p>Build consistency, one day at a time.</p>
+        </div>
+      </div>
+
+      <button id="themeToggle" class="theme-toggle" title="Toggle theme">
+        <span id="themeIcon">☾</span>
+        <span id="themeText">Dark Mode</span>
+      </button>
+    </header>
+
+    <section class="month-navigation">
+      <button id="prevMonth" class="nav-btn">←</button>
+      <h2 id="monthLabel"></h2>
+      <button id="nextMonth" class="nav-btn">→</button>
+      <button id="goToday" class="today-btn">Today</button>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-heading">
+          <span>Monthly Progress</span>
+          <span class="stat-icon">◷</span>
+        </div>
+        <h2 id="monthlyPercent">0%</h2>
+        <div class="progress-track">
+          <div id="monthlyBar" class="progress-fill"></div>
+        </div>
+        <p id="monthlySubtitle">Overall consistency this month</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-heading">
+          <span>Today's Progress</span>
+          <span class="stat-icon">✓</span>
+        </div>
+        <h2 id="todayCount">0/0</h2>
+        <div class="progress-track">
+          <div id="todayBar" class="progress-fill"></div>
+        </div>
+        <p id="todaySubtitle">Tasks completed today</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-heading">
+          <span>Completed Checklists</span>
+          <span class="stat-icon">▣</span>
+        </div>
+        <h2 id="completedTotal">0</h2>
+        <p id="completedSubtitle">Total completed checkboxes</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-heading">
+          <span>Current Streak</span>
+          <span class="stat-icon">🔥</span>
+        </div>
+        <h2 id="streakCount">0 days</h2>
+        <p>Consecutive fully completed days</p>
+      </div>
+    </section>
+
+    <section class="tracker-card">
+      <div class="section-heading">
+        <div>
+          <h2>Daily Tasks</h2>
+          <p>Check off each task as you complete it.</p>
+        </div>
+      </div>
+
+      <div class="add-task">
+        <input
+          type="text"
+          id="newTask"
+          placeholder="Add a new task..."
+          maxlength="100"
+        />
+        <button id="addTaskBtn">+ Add Task</button>
+      </div>
+
+      <div class="table-scroll">
+        <table id="trackerTable"></table>
+      </div>
+    </section>
+
+    <section class="heatmap-card">
+      <div class="section-heading">
+        <div>
+          <h2>Activity Heatmap</h2>
+          <p>Your daily completion consistency.</p>
+        </div>
+      </div>
+
+      <div id="heatmap" class="heatmap"></div>
+
+      <div class="heatmap-legend">
+        <span>Less</span>
+        <span class="heat-level level-0"></span>
+        <span class="heat-level level-1"></span>
+        <span class="heat-level level-2"></span>
+        <span class="heat-level level-3"></span>
+        <span class="heat-level level-4"></span>
+        <span>More</span>
+      </div>
+    </section>
+
+    <footer>
+      <p>Small steps every day lead to big changes.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
